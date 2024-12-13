@@ -30,7 +30,7 @@ time.sleep(2)
 date_picker = chrome_driver.find_element(By.NAME,"bday")
 date_picker.clear()
 date_picker.send_keys("15-12-2024")
-time.sleep(3)
+time.sleep(6)
 submit_button = chrome_driver.find_element(By.XPATH, "//input[@value='Submit']")  # Replace with actual locator
 submit_button.click()
 time.sleep(2)
