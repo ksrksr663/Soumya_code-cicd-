@@ -5,13 +5,21 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+
+# Setting up headless mode
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Enable headless mode
+chrome_options.add_argument("--disable-gpu")  # Disable GPU (Windows-specific)
+chrome_options.add_argument("--no-sandbox")  # Required for running as root in Docker
+chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+
 #loading particular driver of browser
 
 chrome_driver = webdriver.Chrome()
 #opening web url
 #chrome_driver.get("https://portal.adhocnet.org/")
 chrome_driver.get("https://rahulshettyacademy.com/angularpractice/")
-time.sleep(6)
+time.sleep(3)
 #selenium can find the elements by id, name, classname, css, selector, xpath
 
 chrome_driver.find_element(By.NAME,"name").send_keys("Admin_user")
@@ -22,7 +30,7 @@ chrome_driver.find_element(By.ID,"exampleInputPassword1").send_keys("Hellocloud@
 time.sleep(2)
 chrome_driver.find_element(By.ID,"exampleCheck1").click()
 dropdown = Select(chrome_driver.find_element(By.ID,"exampleFormControlSelect1"))
-time.sleep(3)
+time.sleep(6)
 dropdown.select_by_visible_text("Female")
 time.sleep(1)
 chrome_driver.find_element(By.CSS_SELECTOR,"#inlineRadio2").click()
@@ -30,7 +38,7 @@ time.sleep(2)
 date_picker = chrome_driver.find_element(By.NAME,"bday")
 date_picker.clear()
 date_picker.send_keys("15-12-2024")
-time.sleep(6)
+time.sleep(3)
 submit_button = chrome_driver.find_element(By.XPATH, "//input[@value='Submit']")  # Replace with actual locator
 submit_button.click()
 time.sleep(2)
