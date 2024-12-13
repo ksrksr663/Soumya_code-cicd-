@@ -11,7 +11,7 @@ chrome_driver = webdriver.Chrome()
 #opening web url
 #chrome_driver.get("https://portal.adhocnet.org/")
 chrome_driver.get("https://rahulshettyacademy.com/angularpractice/")
-time.sleep(3)
+time.sleep(6)
 #selenium can find the elements by id, name, classname, css, selector, xpath
 
 chrome_driver.find_element(By.NAME,"name").send_keys("Admin_user")
